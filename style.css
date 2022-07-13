@@ -1,0 +1,23 @@
+* {
+    background-color: azure;
+}
+
+.grid-div {
+    display: flex;
+    background-color: blue;
+    height: 160px;
+    width: 160px;
+}
+
+.row {
+    display: flex;
+
+
+}
+
+.gridCell {
+    display: flex;
+    flex-direction: column;
+    border: solid red 1px;
+
+}

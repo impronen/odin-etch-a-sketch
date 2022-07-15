@@ -7,7 +7,7 @@ const gridContainer = document.createElement('div');
 gridContainer.classList.add('gridContainer');
 //Add new container to main node
 main.appendChild(gridContainer);
-//Load function on loading page and place resulting rows/column inside gridContainer
+//Run function on loading page and place resulting rows/column inside gridContainer
 container.addEventListener("onload", genGrid(16,16))
 
 
@@ -15,12 +15,12 @@ container.addEventListener("onload", genGrid(16,16))
 function genGrid(v, b){
 let e = gridContainer;
 
-    for(let i = 0; i < v; i++) {
+    for(let i = 0; i < v; i++) { //Creates row-divs until number of divs = 1st parameter
         let row = document.createElement("row-divs");
         row.className = "row";
 
-        for(let x = 1; x <= b; x++){
-            let cell = document.createElement("cell-divs");
+        for(let x = 1; x <= b; x++){ // Creates cell-divs and makes them child of row-divs
+            let cell = document.createElement("cell-divs"); // until 2nd parameter is reached
             cell.className = "gridCell";
             cell.innerText = "DUDE";
             row.appendChild(cell);

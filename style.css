@@ -1,16 +1,31 @@
-* {
-    background-color: azure;
+*{
+    background-color: #385170; 
 }
 
-.grid-div {
+.body{
+
+}
+
+.header {
     display: flex;
-    background-color: blue;
-    height: 160px;
-    width: 160px;
+    justify-content: center;
+    align-items: center;
+    background-color: #9fd3c7;
+}
+.heading-text {
+    background-color: #9fd3c7;
+}
+
+#main {
+    background-color: #385170;
+}
+.gridContainer {
+    margin-top: 5em;
 }
 
 .row {
     display: flex;
+    justify-content: center;
 
 
 }
@@ -18,6 +33,19 @@
 .gridCell {
     display: flex;
     flex-direction: column;
-    border: solid red 1px;
+    background-color: #ececec; 
+    height: 20px;
+    width: 20px;
+}
 
+.gridCell:hover {
+    background: #142d4c;
+}
+
+.red {
+    display: flex;
+    flex-direction: column;
+    background-color: #720404; 
+    height: 20px;
+    width: 20px; 
 }

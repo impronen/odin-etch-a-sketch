@@ -10,6 +10,8 @@ main.appendChild(gridContainer);
 //Run function on loading page and place resulting rows/column inside gridContainer
 container.addEventListener("onload", genGrid(16,16))
 
+document.querySelector('.gridCell').addEventListener('onclick', changeColor);
+document.querySelector('.gridCell').addEventListener('mouseleave', changeColor );
 
 //Function to generate a grid
 function genGrid(v, b){
@@ -22,9 +24,17 @@ let e = gridContainer;
         for(let x = 1; x <= b; x++){ // Creates cell-divs and makes them child of row-divs
             let cell = document.createElement("cell-divs"); // until 2nd parameter is reached
             cell.className = "gridCell";
-            cell.innerText = "DUDE";
+            // cell.innerText = "D";
             row.appendChild(cell);
         }
         e.appendChild(row);
     }
 }
+
+//Function to change cell-div's class
+
+function changeColor() {
+    this.classList.toggle('red');
+    this.classList.toggle('green');
+}
+

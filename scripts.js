@@ -1,27 +1,17 @@
-/*
-const container = document.querySelector('#main');
 
-const content = document.createElement('div');
-content.classList.add('content');
-content.textContent = 'This is the glorious text-content!';
+//Select div main and set it as constant container
+const container = document.querySelectorAll('main'); 
 
-container.appendChild(content);
-*/
-
-// 
-// give a variable for the main container
-
-
-const container = document.querySelectorAll('main');
-
+//Create a new div and give it a class
 const gridContainer = document.createElement('div');
 gridContainer.classList.add('gridContainer');
-gridContainer.addEventListener
-
+//Add new container to main node
 main.appendChild(gridContainer);
-
+//Load function on loading page and place resulting rows/column inside gridContainer
 container.addEventListener("onload", genGrid(16,16))
 
+
+//Function to generate a grid
 function genGrid(v, b){
 let e = gridContainer;
 

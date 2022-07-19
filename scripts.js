@@ -36,9 +36,17 @@ https://developer.mozilla.org/en-US/docs/Web/API/NodeList/forEach
 */
 
 
-document.querySelector('.gridCell').addEventListener('onclick', changeColor);
+const gridManipulation = document.querySelectorAll('.gridCell') // Creates a variable with the nodelist
+
+//Then use forEach on this bastard to do something to each node on the list
+
+// .addEventListener('onclick', testFunction);
+
 
 function changeColor() {
     this.classList.toggle('red');
-    this.classList.toggle('green');
+}
+
+function testFunction() {
+    alert("Hello! I am an alert box!!");
 }

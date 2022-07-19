@@ -38,8 +38,13 @@
     height: 20px;
     width: 20px;
 }
-
+/*
 .gridCell:hover {
+    background: #142d4c;
+}
+*/
+
+.red {
     background: #142d4c;
 }
 

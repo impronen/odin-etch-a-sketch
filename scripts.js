@@ -34,3 +34,11 @@ You can't add an event listener to an array of node elements.
 You have to loop through them and do it instead.
 https://developer.mozilla.org/en-US/docs/Web/API/NodeList/forEach
 */
+
+
+document.querySelector('.gridCell').addEventListener('onclick', changeColor);
+
+function changeColor() {
+    this.classList.toggle('red');
+    this.classList.toggle('green');
+}

@@ -17,9 +17,30 @@
     background-color: #9fd3c7;
 }
 
-#main {
+.main {
+    display: flex;
+    flex-direction: row;
     background-color: #385170;
 }
+
+.settings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.buttons {
+    background-color: #9fd3c7;
+    border-radius: 5px;
+    border: 0px;
+    margin: 4px;
+
+}
+
+.buttons:active {
+    transform: translateY(2px);
+}
+
 .gridContainer {
     margin-top: 5em;
 }
@@ -31,6 +52,7 @@
 
 }
 
+
 .gridCell {
     display: flex;
     flex-direction: column;
@@ -38,13 +60,8 @@
     height: 20px;
     width: 20px;
 }
-/*
+
 .gridCell:hover {
     background: #142d4c;
 }
 */
-
-.red {
-    background: #142d4c;
-}
-

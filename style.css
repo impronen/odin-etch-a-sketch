@@ -42,7 +42,9 @@
 }
 
 .gridContainer {
+    justify-content: center;
     margin-top: 5em;
+    flex-grow: 1;    
 }
 
 .row {
@@ -52,6 +54,10 @@
 
 }
 
+.grid {
+display: flex;
+justify-content: center;
+}
 
 .gridCell {
     display: flex;
@@ -64,4 +70,3 @@
 .gridCell:hover {
     background: #142d4c;
 }
-*/

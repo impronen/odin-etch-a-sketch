@@ -1,10 +1,5 @@
-
 const gridContainer = document.querySelector('.gridContainer');
-let gridValue = document.querySelector('.grid-size');
-let gridMeasures = document.querySelector('input');
-const resetBtn = document.querySelector('.Reset');
-const generate = document.querySelector('.generate');
-let squareSize = 8;
+
 
 
 const container = document.querySelectorAll('gridContainer'); 
@@ -16,7 +11,7 @@ gridContainer.appendChild(grid);
 const gridManipulation = document.querySelectorAll('gridContainer');
 
 
-container.addEventListener("onload", genGrid(8,8));
+container.addEventListener("onload", genGrid(16,16));
 
 
 //Function to generate a grid
@@ -25,6 +20,7 @@ function genGrid(v, b){
     for(let i = 0; i < v; i++) { 
         let row = document.createElement("div");
         row.className = "row";
+        
 
         for(let x = 1; x <= b; x++){ 
             let cell = document.createElement("div"); 
@@ -37,7 +33,12 @@ function genGrid(v, b){
 
 /* NOT MY CODE - for reference from https://github.com/TarekVisch/etch-a-sketch
 
-// To create square div based on size value handed over by either default or slider
+let gridValue = document.querySelector('.grid-size');
+let gridMeasures = document.querySelector('input');
+const resetBtn = document.querySelector('.Reset');
+const generate = document.querySelector('.generate');
+let squareSize = 8;
+
 
 function divGeneration(size) {
   const div = document.createElement('div');
@@ -47,10 +48,6 @@ function divGeneration(size) {
 
   return div;
 }
-
-// Creat The Grid and append it to grid - place previous function inside this one
-
-
 
 function gridGeneration(gridMeasures) {
   for (let i = 0; i < gridMeasures; i++) {

@@ -1,18 +1,19 @@
 const gridContainer = document.querySelector('.gridContainer');
 
 
-
-const container = document.querySelectorAll('gridContainer'); 
-
 const grid = document.createElement('div');
 grid.classList.add('grid');
 gridContainer.appendChild(grid);
 
+
+
 const gridManipulation = document.querySelectorAll('gridContainer');
 
 
-container.addEventListener("onload", genGrid(16,16));
+gridContainer.addEventListener("onload", genGrid(16,16));
 
+const selectGridCell = document.querySelectorAll('.gridCell');
+const selectRow = document.querySelectorAll('row');
 
 //Function to generate a grid
 function genGrid(v, b){
@@ -30,6 +31,56 @@ function genGrid(v, b){
         gridContainer.appendChild(row);
     }
 }
+
+//Attempt at a function that would change style on mouseover
+
+for (let i = 0; i < selectGridCell.length; i++) {
+  selectGridCell[i].addEventListener('mouseover', function(e){
+  if (e.target.matches('gridCell')) {
+    e.target.classList.add('activeGridCell');
+  }
+})};
+
+
+/*
+//test for looping and changing colour of all cells
+for (i = 0; i< selectGridCell.length; i++) {
+  selectGridCell[i].classList.add('activeGridCell');
+}
+*/
+
+
+
+/*
+selectGridCell.addEventListener('click', (e) => {
+  e.preventDefault();
+  console.log('Hey!')
+  document.querySelector('gridCell').style.background = '#ccc';
+});
+*/
+
+/*
+gridManipulation.forEach((gridContainer) => {
+
+  gridContainer.addEventListener('click', () => {
+            console.log(gridContainer.className);
+            
+        });
+});
+*/
+
+//Event listener - color changer
+/*
+btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    document.querySelector('#my-form').style.background = '#ccc';
+    document.querySelector('body').classList.add('bg-dark');
+});
+*/
+
+/*
+https://developer.mozilla.org/en-US/docs/Web/API/NodeList/forEach
+*/
 
 /* NOT MY CODE - for reference from https://github.com/TarekVisch/etch-a-sketch
 
@@ -60,26 +111,3 @@ function gridGeneration(gridMeasures) {
 
 //Reset - removes children of the grid div and runs the grid creation again
 
-
-
-
-
-
-
-
-
-
-
-/*
-gridManipulation.forEach((gridContainer) => {
-
-        gridManipulation.addEventListener('click', () => {
-            alert(gridManipulation.className);
-        });
-});
-
-/*
-You can't add an event listener to an array of node elements.
-You have to loop through them and do it instead.
-https://developer.mozilla.org/en-US/docs/Web/API/NodeList/forEach
-*/

@@ -43,6 +43,8 @@ for (let i = 0; i < selectGridCell.length; i++) {
 })};
 */
 
+
+//Changes style on mouseEnter - 
 selectGridCell.forEach((item) => {
   item.addEventListener('mouseenter', (e) => {
     e.target.style.backgroundColor = '#142d4c';

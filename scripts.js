@@ -34,12 +34,21 @@ function genGrid(v, b){
 
 //Attempt at a function that would change style on mouseover
 
+/*
 for (let i = 0; i < selectGridCell.length; i++) {
   selectGridCell[i].addEventListener('mouseover', function(e){
   if (e.target.matches('gridCell')) {
     e.target.classList.add('activeGridCell');
   }
 })};
+*/
+
+selectGridCell.forEach((item) => {
+  item.addEventListener('mouseenter', (e) => {
+    e.target.style.backgroundColor = '#142d4c';
+    e.target.style.opacity = 1;
+  })
+});
 
 
 /*

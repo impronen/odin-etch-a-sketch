@@ -1,15 +1,11 @@
 const gridContainer = document.querySelector('.gridContainer');
-
-
 const grid = document.createElement('div');
 grid.classList.add('grid');
 gridContainer.appendChild(grid);
 
-
-
 const gridManipulation = document.querySelectorAll('gridContainer');
 
-
+//Load grid on page load
 gridContainer.addEventListener("onload", genGrid(16,16));
 
 const selectGridCell = document.querySelectorAll('.gridCell');
@@ -32,18 +28,6 @@ function genGrid(v, b){
     }
 }
 
-//Attempt at a function that would change style on mouseover
-
-/*
-for (let i = 0; i < selectGridCell.length; i++) {
-  selectGridCell[i].addEventListener('mouseover', function(e){
-  if (e.target.matches('gridCell')) {
-    e.target.classList.add('activeGridCell');
-  }
-})};
-*/
-
-
 //Changes style on mouseEnter - 
 selectGridCell.forEach((item) => {
   item.addEventListener('mouseenter', (e) => {
@@ -52,73 +36,25 @@ selectGridCell.forEach((item) => {
   })
 });
 
+//Reset - sets the grid back to defaul colour
 
-/*
-//test for looping and changing colour of all cells
-for (i = 0; i< selectGridCell.length; i++) {
-  selectGridCell[i].classList.add('activeGridCell');
+function reset() {
+  document.querySelectorAll("gridCell").forEach(e => e.style.background = '#ccc');
 }
-*/
-
-
-
-/*
-selectGridCell.addEventListener('click', (e) => {
-  e.preventDefault();
-  console.log('Hey!')
-  document.querySelector('gridCell').style.background = '#ccc';
-});
-*/
-
-/*
-gridManipulation.forEach((gridContainer) => {
-
-  gridContainer.addEventListener('click', () => {
-            console.log(gridContainer.className);
-            
-        });
-});
-*/
 
 //Event listener - color changer
-/*
+
 btn.addEventListener('click', (e) => {
     e.preventDefault();
     document.querySelector('#my-form').style.background = '#ccc';
     document.querySelector('body').classList.add('bg-dark');
 });
-*/
+
+
 
 /*
-https://developer.mozilla.org/en-US/docs/Web/API/NodeList/forEach
+for reference from https://github.com/TarekVisch/etch-a-sketch
 */
 
-/* NOT MY CODE - for reference from https://github.com/TarekVisch/etch-a-sketch
 
-let gridValue = document.querySelector('.grid-size');
-let gridMeasures = document.querySelector('input');
-const resetBtn = document.querySelector('.Reset');
-const generate = document.querySelector('.generate');
-let squareSize = 8;
-
-
-function divGeneration(size) {
-  const div = document.createElement('div');
-  div.classList.add('gridContainer');
-  div.style.width = `${size}px`;
-  div.style.height = `${size}px`;
-
-  return div;
-}
-
-function gridGeneration(gridMeasures) {
-  for (let i = 0; i < gridMeasures; i++) {
-    for (let x = 0; x < gridMeasures; x++) {
-      gridContainer.appendchild(divGeneration(gridContainer.clientwidth / gridMeasures));
-    }
-  }
-}
-*/
-
-//Reset - removes children of the grid div and runs the grid creation again
 

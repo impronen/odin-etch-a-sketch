@@ -2,7 +2,7 @@ const gridContainer = document.querySelector('.gridContainer');
 const grid = document.createElement('div');
 grid.classList.add('grid');
 gridContainer.appendChild(grid);
-
+const resetBtn = document.querySelector('.Reset');
 const gridManipulation = document.querySelectorAll('gridContainer');
 
 //Load grid on page load
@@ -28,6 +28,7 @@ function genGrid(v, b){
     }
 }
 
+
 //Changes style on mouseEnter - 
 selectGridCell.forEach((item) => {
   item.addEventListener('mouseenter', (e) => {
@@ -36,21 +37,25 @@ selectGridCell.forEach((item) => {
   })
 });
 
+// Shoudl this be changed so it works by setting a class --> classList.replace()
+//With this, reset function woul be classList.remove() 
+
 //Reset - sets the grid back to defaul colour
 
-function reset() {
-  document.querySelectorAll("gridCell").forEach(e => e.style.background = '#ccc');
-}
 
-//Event listener - color changer
 
-btn.addEventListener('click', (e) => {
+
+
+
+/*
+resetBtn.addEventListener('click', (e) => {
     e.preventDefault();
     document.querySelector('#my-form').style.background = '#ccc';
     document.querySelector('body').classList.add('bg-dark');
 });
+*/
 
-
+resetBtn.addEventListener('click', reset);
 
 /*
 for reference from https://github.com/TarekVisch/etch-a-sketch

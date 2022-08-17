@@ -29,15 +29,13 @@ function genGrid(v, b){
 }
 
 
-//Changes style on mouseEnter - 
+//Changes style/class on mouseEnter - 
 selectGridCell.forEach((item) => {
   item.addEventListener('mouseenter', (e) => {
     e.target.classList.add('paintedCell');
   })
 });
 
-// Shoudl this be changed so it works by setting a class --> classList.replace()
-//With this, reset function woul be classList.remove() 
 
 //Reset - removes the class added to the 
 
@@ -48,16 +46,6 @@ resetBtn.addEventListener('click', ()=>{
 })
 
 // Investigate this: https://www.30secondsofcode.org/articles/s/javascript-arrow-function-event-listeners
-
-
-/*
-resetBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    document.querySelector('#my-form').style.background = '#ccc';
-    document.querySelector('body').classList.add('bg-dark');
-});
-*/
-
 
 
 /*

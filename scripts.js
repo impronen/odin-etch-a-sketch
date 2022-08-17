@@ -4,12 +4,37 @@ grid.classList.add('grid');
 gridContainer.appendChild(grid);
 const resetBtn = document.querySelector('.Reset');
 const gridManipulation = document.querySelectorAll('gridContainer');
+const generateBtn = document.querySelector('.generate');
 
 //Load grid on page load
 gridContainer.addEventListener("onload", genGrid(16,16));
 
-const selectGridCell = document.querySelectorAll('.gridCell');
-const selectRow = document.querySelectorAll('row');
+let selectGridCell = document.querySelectorAll('.gridCell');
+let selectRow = document.querySelectorAll('row');
+
+//Generate - deletes the original grid and recreates it
+function removeGrid() {
+  let rows = document.querySelectorAll('.row');
+  for (let i = 0; i < rows.length; i++) {
+    const elem = rows[i];
+    elem.parentNode.removeChild(elem);
+  }
+
+  let cells = document.querySelectorAll('.gridCell');
+  for (let i = 0; i < cells.length; i++) {
+    const elem = cells[i];
+    elem.parentNode.removeChild(elem);
+  }
+
+  genGrid(16,16);
+selectGridCell = document.querySelectorAll('.gridCell');
+selectRow = document.querySelectorAll('row');
+}
+
+//Event listener for grid Generate button
+generateBtn.addEventListener('click', ()=>{
+  removeGrid() 
+})
 
 //Function to generate a grid
 function genGrid(v, b){
@@ -28,7 +53,6 @@ function genGrid(v, b){
     }
 }
 
-
 //Changes style/class on mouseEnter - 
 selectGridCell.forEach((item) => {
   item.addEventListener('mouseenter', (e) => {
@@ -37,13 +61,16 @@ selectGridCell.forEach((item) => {
 });
 
 
-//Reset - removes the class added to the 
-
+//Reset - removes the class added to the grid elements -> grid becomes "clean"
 resetBtn.addEventListener('click', ()=>{
   selectGridCell.forEach(function(item) {
     item.classList.remove('paintedCell')
   });
 })
+
+
+
+
 
 // Investigate this: https://www.30secondsofcode.org/articles/s/javascript-arrow-function-event-listeners
 

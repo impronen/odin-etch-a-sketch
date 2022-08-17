@@ -9,8 +9,12 @@ const generateBtn = document.querySelector('.generate');
 //Load grid on page load
 gridContainer.addEventListener("onload", genGrid(16,16));
 
+
 let selectGridCell = document.querySelectorAll('.gridCell');
 let selectRow = document.querySelectorAll('row');
+
+
+painting ()
 
 //Generate - deletes the original grid and recreates it
 function removeGrid() {
@@ -33,7 +37,8 @@ selectRow = document.querySelectorAll('row');
 
 //Event listener for grid Generate button
 generateBtn.addEventListener('click', ()=>{
-  removeGrid() 
+  removeGrid() //Removes grid and event listeners and recreates the grid
+  painting () //Reastablishes the event listener
 })
 
 //Function to generate a grid
@@ -54,11 +59,13 @@ function genGrid(v, b){
 }
 
 //Changes style/class on mouseEnter - 
+function painting () {
 selectGridCell.forEach((item) => {
   item.addEventListener('mouseenter', (e) => {
     e.target.classList.add('paintedCell');
   })
 });
+}
 
 
 //Reset - removes the class added to the grid elements -> grid becomes "clean"

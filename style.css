@@ -67,6 +67,6 @@ justify-content: center;
     width: 20px;
 }
 
-.activeGridCell {
+.paintedCell {
     background: #142d4c;
 }

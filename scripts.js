@@ -32,19 +32,22 @@ function genGrid(v, b){
 //Changes style on mouseEnter - 
 selectGridCell.forEach((item) => {
   item.addEventListener('mouseenter', (e) => {
-    e.target.style.backgroundColor = '#142d4c';
-    e.target.style.opacity = 1;
+    e.target.classList.add('paintedCell');
   })
 });
 
 // Shoudl this be changed so it works by setting a class --> classList.replace()
 //With this, reset function woul be classList.remove() 
 
-//Reset - sets the grid back to defaul colour
+//Reset - removes the class added to the 
 
+resetBtn.addEventListener('click', ()=>{
+  selectGridCell.forEach(function(item) {
+    item.classList.remove('paintedCell')
+  });
+})
 
-
-
+// Investigate this: https://www.30secondsofcode.org/articles/s/javascript-arrow-function-event-listeners
 
 
 /*
@@ -55,7 +58,7 @@ resetBtn.addEventListener('click', (e) => {
 });
 */
 
-resetBtn.addEventListener('click', reset);
+
 
 /*
 for reference from https://github.com/TarekVisch/etch-a-sketch

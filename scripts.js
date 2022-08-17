@@ -4,19 +4,20 @@ grid.classList.add('grid');
 gridContainer.appendChild(grid);
 const resetBtn = document.querySelector('.Reset');
 const gridManipulation = document.querySelectorAll('gridContainer');
-const generateBtn = document.querySelector('.generate');
+
+const generateLarge = document.querySelector('.big');
+const generateNormal = document.querySelector('.normal');
+const generateSmall = document.querySelector('.small');
 
 //Load grid on page load
-gridContainer.addEventListener("onload", genGrid(16,16));
+gridContainer.addEventListener("onload", genGrid(20,20));
 
 
 let selectGridCell = document.querySelectorAll('.gridCell');
 let selectRow = document.querySelectorAll('row');
-
-
 painting ()
 
-//Generate - deletes the original grid and recreates it
+//Deletes the original grid and recreates it
 function removeGrid() {
   let rows = document.querySelectorAll('.row');
   for (let i = 0; i < rows.length; i++) {
@@ -30,14 +31,30 @@ function removeGrid() {
     elem.parentNode.removeChild(elem);
   }
 
-  genGrid(16,16);
-selectGridCell = document.querySelectorAll('.gridCell');
-selectRow = document.querySelectorAll('row');
 }
 
 //Event listener for grid Generate button
-generateBtn.addEventListener('click', ()=>{
-  removeGrid() //Removes grid and event listeners and recreates the grid
+generateLarge.addEventListener('click', ()=>{
+  removeGrid() //Removes grid and event listeners
+  genGrid(30,30);
+  selectGridCell = document.querySelectorAll('.gridCell');
+  selectRow = document.querySelectorAll('row'); 
+  painting () //Reastablishes the event listener
+})
+
+generateNormal.addEventListener('click', ()=>{
+  removeGrid() //Removes grid and event listeners
+  genGrid(20,20);
+  selectGridCell = document.querySelectorAll('.gridCell');
+  selectRow = document.querySelectorAll('row'); 
+  painting () //Reastablishes the event listener
+})
+
+generateSmall.addEventListener('click', ()=>{
+  removeGrid() //Removes grid and event listeners
+  genGrid(10,10);
+  selectGridCell = document.querySelectorAll('.gridCell');
+  selectRow = document.querySelectorAll('row'); 
   painting () //Reastablishes the event listener
 })
 

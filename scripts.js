@@ -36,9 +36,12 @@ function removeGrid() {
 //Event listener for grid Generate button
 generateLarge.addEventListener('click', ()=>{
   removeGrid() //Removes grid and event listeners
-  genGrid(30,30);
+  genGrid(27,27);
   selectGridCell = document.querySelectorAll('.gridCell');
   selectRow = document.querySelectorAll('row'); 
+  selectGridCell.forEach(function(item) {
+    item.classList.add('gridCellLarge')
+  });
   painting () //Reastablishes the event listener
 })
 
@@ -55,6 +58,9 @@ generateSmall.addEventListener('click', ()=>{
   genGrid(10,10);
   selectGridCell = document.querySelectorAll('.gridCell');
   selectRow = document.querySelectorAll('row'); 
+  selectGridCell.forEach(function(item) {
+    item.classList.add('gridCellSmall')
+  });
   painting () //Reastablishes the event listener
 })
 
@@ -91,17 +97,4 @@ resetBtn.addEventListener('click', ()=>{
     item.classList.remove('paintedCell')
   });
 })
-
-
-
-
-
-// Investigate this: https://www.30secondsofcode.org/articles/s/javascript-arrow-function-event-listeners
-
-
-/*
-for reference from https://github.com/TarekVisch/etch-a-sketch
-*/
-
-
 

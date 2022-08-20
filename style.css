@@ -30,7 +30,7 @@
     align-items: center;
     justify-content: center;
     padding: 2em;
-    padding-top: 15em;
+    padding-top: 10em;
 }
 
 .buttons {
@@ -53,20 +53,18 @@
 
 .gridContainer {
     justify-content: center;
-    flex-grow: 1;    
+    align-items: center;
 }
 
 .row {
     display: flex;
     justify-content: center;
-
-
+    
 }
 
 .grid {
 display: flex;
 justify-content: center;
-margin-bottom: 1em;
 }
 
 .gridCell {
@@ -75,6 +73,16 @@ margin-bottom: 1em;
     background-color: #ececec; 
     height: 20px;
     width: 20px;
+}
+
+.gridCellLarge {
+    height: 15px;
+    width: 15px;   
+}
+
+.gridCellSmall {
+    height: 40px;
+    width: 40px;   
 }
 
 .paintedCell {
